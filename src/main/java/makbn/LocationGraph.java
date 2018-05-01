@@ -24,13 +24,6 @@ public class LocationGraph<V extends LocationVertex, E extends PathEdge<V>> {
         this.stateOutputTraffic=new HashMap<String, Integer>();
     }
 
-    public LocationGraph(WeightedGraph<V, E> base) {
-        //super(base);
-        this.vertices=new ArrayList<V>();
-        this.edges=new ArrayList<PathEdge<V>>();
-    }
-
-
     //@Override
     public boolean addVertex(V v) {
         for (int i=0;i<vertices.size();i++){

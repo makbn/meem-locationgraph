@@ -1,8 +1,5 @@
 package makbn;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -39,7 +36,7 @@ public class SqlHelper {
      * @param username the database user on whose behalf the connection is being made
      * @param password the user's password
      */
-    public static void init(DBRM dbrm, @NotNull String host, @Nullable String dbName, String username, String password) throws SQLException, ClassNotFoundException {
+    public static void init(DBRM dbrm,String host,String dbName, String username, String password) throws SQLException, ClassNotFoundException {
 
         String url=dbrm.connectionQuery.replace("{MYSERVER}",host);
 

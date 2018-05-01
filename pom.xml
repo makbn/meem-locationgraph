@@ -6,7 +6,7 @@
 
     <groupId>io.github.makbn</groupId>
     <artifactId>meem_locationgraph</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <build>
         <plugins>
@@ -27,10 +27,8 @@
         <dependency>
             <groupId>org.jgrapht</groupId>
             <artifactId>jgrapht-core</artifactId>
-            <version>1.0.1</version>
+            <version>1.1.0</version>
         </dependency>
-
-
 
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>

@@ -1,7 +1,5 @@
 package makbn;
 
-import org.jgrapht.WeightedGraph;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 

@@ -17,7 +17,7 @@
  <dependency>
 	    <groupId>com.github.makbn</groupId>
 	    <artifactId>meem-locationgraph</artifactId>
-	    <version>v1.4</version>
+	    <version>v1.5</version>
  </dependency>
   
  ```
@@ -39,6 +39,6 @@ Add the dependency:
 
 ```gradle
 	dependencies {
-	        implementation 'com.github.makbn:meem-locationgraph:v1.4'
+	        implementation 'com.github.makbn:meem-locationgraph:v1.5'
 	}
 ```

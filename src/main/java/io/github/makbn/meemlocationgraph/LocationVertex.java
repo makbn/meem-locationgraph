@@ -1,4 +1,4 @@
-package makbn;
+package io.github.makbn.meemlocationgraph;
 
 import java.nio.charset.Charset;
 

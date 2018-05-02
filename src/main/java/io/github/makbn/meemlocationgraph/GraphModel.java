@@ -1,4 +1,4 @@
-package makbn;
+package io.github.makbn.meemlocationgraph;
 
 import com.jsoniter.JsonIterator;
 import com.jsoniter.any.Any;

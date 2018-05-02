@@ -1,4 +1,4 @@
-package makbn;
+package io.github.makbn.meemlocationgraph;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

@@ -1,4 +1,4 @@
-package makbn;
+package io.github.makbn.meemlocationgraph;
 
 public class PathEdge<V extends LocationVertex> {
 

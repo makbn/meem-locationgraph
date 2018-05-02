@@ -1,4 +1,4 @@
-package makbn;
+package io.github.makbn.meemlocationgraph;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -14,8 +14,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class MainPathFactory {
-
-
 
     public static ArrayList<DirectedPath> mainPath(String filePath) throws IOException {
         ArrayList<DirectedPath> directedPaths=new ArrayList<DirectedPath>();

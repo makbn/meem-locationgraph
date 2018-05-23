@@ -48,6 +48,7 @@ public class GraphFactory {
             String parcelCode=resultSet.getString("ParcelCode");
             int postNodeId=resultSet.getInt("PostnodeID");
             String pCity=resultSet.getString("PCity");
+            String eCity=resultSet.getString("ECity");
             int cityId=resultSet.getInt("CityID");
             int event=resultSet.getInt("EventID");
            // int stateId=resultSet.getInt("stateID");
@@ -63,7 +64,7 @@ public class GraphFactory {
             double lon=geo[1];
             String date=resultSet.getString("EventDate");
 
-            LocationVertex currentVertex=new LocationVertex(id++,lat,lon,date,null,-1,pCity,false,cityId,pState,eState,stateId);
+            LocationVertex currentVertex=new LocationVertex(id++,lat,lon,date,null,-1,pCity,false,cityId,pState,eState,stateId,eCity);
             currentVertex.setEventId(event);
             currentVertex.setPostNodeId(postNodeId);
             lg.addVertex(currentVertex);

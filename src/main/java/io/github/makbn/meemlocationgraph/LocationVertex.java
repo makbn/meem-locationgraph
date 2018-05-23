@@ -49,12 +49,13 @@ public class LocationVertex{
         this.cityId=cityID;
     }
 
-    public LocationVertex(int id, double lat, double lon, String date, String time, int postManId, String pCity, boolean delivered,int cityId,String pState,String eState,int stateId ) {
+    public LocationVertex(int id, double lat, double lon, String date, String time, int postManId, String pCity, boolean delivered,int cityId,String pState,String eState,int stateId,String eCity ) {
         this(id,lat,lon,date,time,postManId,pCity,delivered);
         this.eState = eState;
         this.pState = pState;
         this.cityId = cityId;
         this.stateId = stateId;
+        this.eCity=eCity;
     }
 
     public static LocationVertex getLocationVertex(String csv){
@@ -70,7 +71,8 @@ public class LocationVertex{
                 Integer.parseInt(param[8].trim()),
                 param[9].trim(),
                 param[10].trim(),
-                Integer.parseInt( param[11].trim())
+                Integer.parseInt( param[11].trim()),
+                param[12].trim()
                 );
     }
 

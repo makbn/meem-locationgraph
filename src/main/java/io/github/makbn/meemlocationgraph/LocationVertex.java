@@ -206,7 +206,8 @@ public class LocationVertex{
                 this.cityId+","+
                 this.pState+","+
                 this.eState+","+
-                this.stateId;
+                this.stateId+","+
+                this.eCity;
         return csvLine;
     }
 

@@ -14,6 +14,25 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 public class MainPathFactory {
+    private static HashMap<Integer ,Color> colorHashMap=new HashMap<Integer, Color>();
+    private static HashMap<Integer ,BasicStroke> strokHashMap=new HashMap<Integer, BasicStroke>();
+    private static HashMap<String,Integer> map=new HashMap<String, Integer>();
+    static {
+        colorHashMap.put(1,new Color(0, 255, 255,160));
+        strokHashMap.put(1,new BasicStroke(6));
+
+        colorHashMap.put(2,new Color(255, 0, 255,160));
+        strokHashMap.put(2,new BasicStroke(5));
+
+        colorHashMap.put(3,new Color(255, 0, 0,160));
+        strokHashMap.put(3,new BasicStroke(4));
+
+        colorHashMap.put(4, new Color(0, 255, 0,160));
+        strokHashMap.put(4,new BasicStroke(3));
+
+        colorHashMap.put(5, new Color(0, 255, 100,160));
+        strokHashMap.put(5,new BasicStroke(2));
+    }
 
     public static ArrayList<DirectedPath> mainPath(String filePath) throws IOException {
         ArrayList<DirectedPath> directedPaths=new ArrayList<DirectedPath>();
@@ -23,6 +42,7 @@ public class MainPathFactory {
         HSSFRow row;
         HSSFCell cell;
         Iterator rows = sheet.rowIterator();
+
 
         for(int rowIndex=0;rows.hasNext();rowIndex++){
             row=(HSSFRow) rows.next();
@@ -126,23 +146,23 @@ public class MainPathFactory {
                     for(String airline:airlineName){
                         Color color=null;
                         BasicStroke stroke=null;
-                        if (airline.equals("iran air")) {
-                            color =  new Color(0, 255, 255,160);
-                            stroke=new BasicStroke(5);
-                        } else if (airline.equals("ata")) {
-                            color = new Color(255, 0, 255,160);
-                            stroke=new BasicStroke(4);
-                        } else if (airline.equals("mahan")) {
-                            color = new Color(255, 0, 0,160);
-                            stroke=new BasicStroke(3);
-                        } else if (airline.equals("taban")) {
-                            color = new Color(0, 255, 0,160);
-                            stroke=new BasicStroke(2);
+                        int styleIndex=0;
+                        if(map.containsKey(airline)){
+                            styleIndex=map.get(airline);
+                        }else {
+                            for (int i=1;i<5;i++){
+                                if(map.containsValue(i)){
+                                    continue;
+                                }else {
+                                    map.put(airline,i);
+                                    styleIndex=i;
+                                    break;
+                                }
+                            }
                         }
-
                         directedPaths.get(DirectedPath.PathType.airline).add(createDirectedPath(locationVertices,
-                                stroke,
-                                color,
+                                strokHashMap.get(styleIndex),
+                                colorHashMap.get(styleIndex),
                                 DirectedPath.PathType.airline,
                                 airline));
                     }
